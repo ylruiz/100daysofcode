@@ -15,7 +15,7 @@ ul {
 }
 
 ul#menu li {
-  display: inline;
+  display: block;
   text-align: right;
 }
 
@@ -54,27 +54,73 @@ main {
   margin-top: 30px;
 }
 
-nav {
-  background-color: #000;
+/** header **/
+header #navBtn {
+  display: none;
 }
-nav ul {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-}
-
-#header-img {
+header #header-img {
   width: 60px;
   margin-top: 4px;
   margin-left: 4px;
 }
+header .topnav {
+  background-color: #000;
+  overflow: hidden;
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+header .topnav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+@media screen and (max-width: 500px) {
+  header .nav-right {
+    float: none;
+    margin-top: 0;
+  }
+  header .nav-right ul {
+    display: none;
+  }
+  header .nav-right ul li {
+    display: block;
+    padding: 10px;
+  }
+  header .nav-right ul li a {
+    display: block;
+    padding: 0;
+  }
+  header .nav-right ul.active {
+    display: block;
+  }
+  header #navBtn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: block;
+    width: 60px;
+    height: 45px;
+    border: none;
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+  }
+  header #navBtn:focus {
+    outline: 0;
+  }
+}
 
 #hero {
   display: block;
-  margin-top: 20px;
+  margin-top: 60px;
   margin-left: 5%;
   margin-right: 5%;
   background-color: white;
+}
+#hero mystylehero {
+  margin-bottom: 180px;
 }
 #hero h1 {
   font-size: 30px;
@@ -198,4 +244,19 @@ footer ul li {
 footer span {
   color: #444;
   float: left;
+}
+@media (max-width: 600px) {
+  footer {
+    text-align: center;
+  }
+  footer span {
+    float: none;
+  }
+  footer ul {
+    justify-content: center;
+    margin-top: 10px;
+  }
+  footer ul li {
+    text-align: center;
+  }
 }
